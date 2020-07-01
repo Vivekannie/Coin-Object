@@ -12,7 +12,6 @@ function statecoin (callback, ms) {
 
 }
 
-
 flip:function flip() {
   coin.setAttribute('class', '');
   const random = Math.random();
@@ -21,16 +20,6 @@ flip:function flip() {
    coin.setAttribute('class', 'animate-' + result);
    statecoin (processResult.bind(null, result), 20);
  }, 20);
-}
-
-function display20images() {
-  for (index = 0; index < 20; index++) {
-      coin.flip()
-      let side = document.createElement('div')
-      body.append(side)
-      side.append(coin.innerHTML())
-
-  }
 }
 
 toString:function processResult(result) {
@@ -46,4 +35,13 @@ toString:function processResult(result) {
 
 button.addEventListener('click', flip);
 
+function display20images() {
+  for (index = 0; index < 20; index++) {
+      coin.flip()
+      let side = document.createElement('div')
+      body.append(side)
+      side.append(coin.innerHTML())
+
+  }
+}
 
